@@ -4,7 +4,7 @@ All notable changes to symbi-codered are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.2.0] - 2026-08-26
 
 ### Added
 - **Selectable model profiles** — `codered hunt --model-profile <name>`
@@ -59,6 +59,15 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
   described as not-yet-included); corrected the `symbi-redteam` link and clone
   URL; added `php-sandbox`/`java-sandbox`/`iac-scanner` to the quick-start;
   documented `GRC_TOKEN` and `OPENROUTER_API_KEY` in `.env.example`.
+
+### Security
+- Patched RUSTSEC advisories via lockfile update: quinn-proto 0.11.17
+  (RUSTSEC-2026-0185, remote memory exhaustion, high), h2 0.4.19
+  (RUSTSEC-2026-0258, unbounded empty DATA frames), crossbeam-epoch 0.9.20
+  (RUSTSEC-2026-0204), plus unsoundness fixes in anyhow 1.0.104,
+  event-listener 5.4.2, and memmap2 0.9.11. Known remaining: rsa 0.9.10
+  Marvin timing sidechannel (RUSTSEC-2023-0071, transitive via
+  symbi-runtime → jsonwebtoken) has no fixed upstream release.
 
 ## [1.1.0] - 2026-06-30
 
